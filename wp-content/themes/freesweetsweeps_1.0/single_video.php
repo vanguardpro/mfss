@@ -1,13 +1,3 @@
-<?php get_header(); ?>
-
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
- <?php  if(get_post_meta($post->ID, 'video', true)!='') { ?>
-                            
-                            <?php include TEMPLATEPATH.'/single_video.php';?>
-                            
-                      <?php }else{ ?>
-
 <?php 
      
       
@@ -43,7 +33,9 @@
 <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-image'); ?>
 
 
-<img src="<?php $image=str_replace('http://m.freesweetsweeps', 'http://freesweetsweeps', $image[0]); echo $image;?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" style="max-width:290px; padding:2px; border:1px solid #d7d7d7;" /></a><br />
+<iframe class="" width="300" height="169" src="<?php echo get_post_meta($post->ID, 'video', true); ?>" frameborder="0" allowfullscreen></iframe>
+
+</a><br />
 
 
 
@@ -88,17 +80,3 @@ $navigation->get_previous_post('Expired');
 <br/><br/>
 </div>	
 	</div><!-- /content --> 
-<?php } ?>
-	<?php endwhile; else: ?>
-
-		<section>
-			<article>
-				<p>Sorry, no posts matched your criteria.</p>
-			</article>
-		</section>
-
-	<?php endif; ?>
-
-
-
-<?php get_footer(); ?>
