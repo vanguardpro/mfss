@@ -1,0 +1,22 @@
+# Don't add the Local settings file to the repository #
+wp-config-local.php
+m/
+.htaccess
+# No need to add the upgrade folder to the repo #
+wp-content/upgrade/*
+wp-content/uploads/*
+wp-content/cache/*
+wp-content/m/*
+#wp-content/themes/wf_us_9.7/api/define.php
+# sitemaps not needed locally #
+sitemap.xml
+sitemap.xml.gz
+# no need for these #
+readme.html
+license.txt
+.log
+.DS_Store
+nbproject
+.error_log
+wp-admin/.error_log
+/.error_log
